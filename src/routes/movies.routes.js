@@ -1,14 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../../db-conection");
-const { QueryTypes } = require('sequelize');
-
 const { Movies } = require("../models/index");
 
-router.get('/get-movie', async (req, res) => {
-    const listMovies = await Movies.findAll();
-    console.log(JSON.stringify(listMovies, null, 2))
-    res.send('get list movies...')
-})
+router.get("/get-movie", async (req, res) => {
+  const listMovies = await Movies.findAll();
+  const data = JSON.parse(JSON.stringify(listMovies, null, 2))
+  const dataObject = {
+    resCode: 200,
+    message: "Success",
+    data,
+  };
+  res.send(dataObject).status(200);
+});
 
 module.exports = router;
