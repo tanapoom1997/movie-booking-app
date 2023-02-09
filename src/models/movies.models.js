@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../../db-conection");
 
-class Movies extends Model {}
-Movies.init(
+const Movies = sequelize.define(
+  "Movies",
   {
     movieId: {
       type: DataTypes.INTEGER,
