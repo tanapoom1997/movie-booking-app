@@ -9,18 +9,18 @@ const Movies = sequelize.define(
       field: "movie_id",
       primaryKey: true
     },
-    movieName: {
+    title: {
       type: DataTypes.STRING,
-      field: "movie_name",
+      field: "titile",
     },
-    availableDate: {
-      type: DataTypes.DATE,
-      field: "available_date",
+    durationMin: {
+      type: DataTypes.INTEGER,
+      field: "duration_min",
     },
   },
   {
-    modelName: "movies",
-    tableName: "movies",
+    modelName: "movie",
+    tableName: "movie",
     sequelize,
   }
 );

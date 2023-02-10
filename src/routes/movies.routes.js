@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const { Movies } = require("../models/index");
+const { successResponse } = require("../utils");
+const MoviesController = require("../controllers/movies.controllers");
+const moviecontroller = new MoviesController();
 
 router.get("/get-movie", async (req, res) => {
-  const listMovies = await Movies.findAll();
-  const data = JSON.parse(JSON.stringify(listMovies, null, 2))
-  const dataObject = {
-    resCode: 200,
-    message: "Success",
-    data,
-  };
-  res.send(dataObject).status(200);
+  try {
+    const getMoviesList = await moviecontroller.getMoviesList(req);
+    return successResponse(res, '', getMoviesList )
+  } catch (error) {
+    res.send(error).status(500);
+  }
 });
 
 module.exports = router;

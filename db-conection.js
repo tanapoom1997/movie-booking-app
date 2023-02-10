@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize("storedata", "root", "password", {
-  host: "mysql_server",
+  host: "127.0.0.1", //mysql_server for docker
   dialect: "mysql",
   port: 3306,
   logging: false,
