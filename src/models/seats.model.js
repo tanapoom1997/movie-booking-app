@@ -2,7 +2,7 @@ const { Sequelize, DataTypes, Model } = require("sequelize");
 const { sequelize } = require("../../db-conection");
 
 const Movies = sequelize.define(
-  "Seat",
+  "Seats",
   {
     seatId: {
       type: DataTypes.INTEGER,
@@ -19,8 +19,8 @@ const Movies = sequelize.define(
     },
   },
   {
-    modelName: "movie",
-    tableName: "movie",
+    modelName: "seats",
+    tableName: "seats",
     sequelize,
   }
 );

@@ -19,8 +19,8 @@ const Movies = sequelize.define(
     },
   },
   {
-    modelName: "movie",
-    tableName: "movie",
+    modelName: "movies",
+    tableName: "movies",
     sequelize,
   }
 );
