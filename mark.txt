@@ -12,7 +12,6 @@ services:
       - 8889:8889
     depends_on: 
       - mysql_server
-    restart: always
     networks: 
       - backend
   
@@ -22,8 +21,6 @@ services:
       - MYSQL_DATABASE=storedata
       - MYSQL_ROOT_PASSWORD=password
     ports:
-      - 3306:3306
-    volumes:
-      - /var/lib/mysql
+     - 3306:3306
     networks: 
       - backend
