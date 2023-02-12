@@ -7,9 +7,9 @@ const moviecontroller = new MoviesController();
 router.get("/get-movie", async (req, res) => {
   try {
     const getMoviesList = await moviecontroller.getMoviesList(req);
-    return successResponse(res, '', getMoviesList )
+    return successResponse(res, "", getMoviesList);
   } catch (error) {
-    res.send(error).status(500);
+    throw error;
   }
 });
 

@@ -9,9 +9,13 @@ const Movies = sequelize.define(
       field: "ticket_id",
       primaryKey: true,
     },
-    movieName: {
+    movieId: {
+      type: DataTypes.INTEGER,
+      field: "movie_id",
+    },
+    timeBooking: {
       type: DataTypes.STRING,
-      field: "movie_name",
+      field: "time_booking",
     },
   },
   {

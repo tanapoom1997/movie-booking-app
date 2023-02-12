@@ -3,7 +3,9 @@ const { Tickets } = require("../models/index");
 class TicketsController {
   async insertBookingTicket(req) {
     try {
-      await Tickets.create({ movieName: req.body.movie_name });
+      await Tickets.create({ ticketCode: req.body.ticket_code,
+        movieId: req.body.movie_id,
+        timeBooking: req.body.time_booking });
       return;
     } catch (error) {
       throw error;
@@ -13,7 +15,7 @@ class TicketsController {
     try {
       await Tickets.destroy({
         where: {
-          ticketId: req.body.ticket_id,
+          ticketCode: req.body.ticket_code,
         },
       });
       return;

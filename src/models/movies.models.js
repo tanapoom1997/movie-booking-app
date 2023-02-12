@@ -11,11 +11,11 @@ const Movies = sequelize.define(
     },
     title: {
       type: DataTypes.STRING,
-      field: "titile",
+      field: "title",
     },
-    durationMin: {
-      type: DataTypes.INTEGER,
-      field: "duration_min",
+    showDate: {
+      type: DataTypes.DATE,
+      field: "show_time",
     },
   },
   {
