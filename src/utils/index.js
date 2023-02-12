@@ -1,6 +1,6 @@
-const successResponse = (res, message, data) => {
+const successResponse = (res, resCode, message, data) => {
   const objectReturn = {
-    resCode: 200,
+    resCode,
     message: message || "success with no conditions.",
     data,
   };

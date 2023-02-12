@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const movies = require("./movies.routes");
-const tickets = require("./tickets.routes");
-const seats = require("./seats.routes");
+const films = require("./films.routes");
+const bookings = require("./booking.routes");
 
-router.use("/movies", movies);
-router.use("/tickets", tickets);
-router.use("/seats", seats);
+router.use("/films", films);
+router.use("/booking", bookings);
 
 module.exports = router;

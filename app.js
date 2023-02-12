@@ -4,12 +4,12 @@ const bodyParser = require('body-parser')
 const PORT = 8889;
 
 // Conection to mysql.
-// const db = require("./db-conection");
+const db = require("./db-conection");
 
 // require routes.
 const routes = require("./src/routes");
 
-// db.connectToMySQL();
+db.connectToMySQL();
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
