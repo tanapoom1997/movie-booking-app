@@ -8,6 +8,7 @@ const Films = sequelize.define(
       type: DataTypes.INTEGER,
       field: "film_id",
       primaryKey: true,
+      autoIncrement: true,
     },
     filmName: {
       type: DataTypes.STRING,

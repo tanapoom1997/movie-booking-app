@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "7b017ae5-d3ba-4678-ab41-a0e5a599de2e",
+		"name": "MovieBookingApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12271528"
+	},
+	"item": [
+		{
+			"name": "hello app",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8889/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8889",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-film",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8889/v1/films/get-film",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8889",
+					"path": [
+						"v1",
+						"films",
+						"get-film"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book-ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"screening_id\": 2,\r\n    \"seat_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8889/v1/booking/book-ticket",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8889",
+					"path": [
+						"v1",
+						"booking",
+						"book-ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel-ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"booking_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8889/v1/booking/cancel-ticket",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8889",
+					"path": [
+						"v1",
+						"booking",
+						"cancel-ticket"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

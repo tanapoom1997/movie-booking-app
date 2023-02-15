@@ -4,9 +4,15 @@ const { sequelize } = require("../../db-conection");
 const Booking = sequelize.define(
   "Booking",
   {
+    bookingId: {
+      type: DataTypes.INTEGER,
+      field: "booking_id",
+      primaryKey: true,
+      autoIncrement: true,
+    },
     screeningId: {
       type: DataTypes.INTEGER,
-      filed: "screening_id",
+      field: "screening_id",
     },
   },
   {
@@ -15,3 +21,5 @@ const Booking = sequelize.define(
     sequelize,
   }
 );
+
+module.exports = Booking;

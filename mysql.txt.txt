@@ -1,0 +1,82 @@
+### Create films table.
+CREATE TABLE storedata.films (
+	film_id INT auto_increment NOT NULL,
+	film_name varchar(100) NOT NULL,
+	length_min INT NULL,
+	description MEDIUMTEXT NULL,
+	CONSTRAINT films_PK PRIMARY KEY (film_id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+OLLATE=utf8mb4_0900_ai_ci;
+
+
+
+### Create seats table.
+CREATE TABLE storedata.seats (
+	seat_id INTEGER auto_increment NOT NULL,
+	seat_row varchar(10) NOT NULL,
+	seat_number INT NOT NULL,
+	auditorium_id INT NOT NULL,
+	CONSTRAINT seats_PK PRIMARY KEY (seat_id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+### Create reserved_seats table.
+CREATE TABLE storedata.reserved_seats (
+	reserved_seat_id INTEGER auto_increment NOT NULL,
+	booking_id INTEGER NOT NULL,
+	seat_id INTEGER NOT NULL
+	CONSTRAINT reserved_seats_PK PRIMARY KEY (reserved_seat_id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+### Create auditoriums table.
+CREATE TABLE storedata.auditoriums (
+	auditorium_id INT auto_increment NOT NULL,
+	name varchar(45) NULL,
+	no_seet INT NULL,
+	CONSTRAINT auditoriums_PK PRIMARY KEY (auditorium_id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+### Create screenings table.
+CREATE TABLE storedata.screenings (
+	screening_id INT auto_increment NOT NULL,
+	film_id INT NULL,
+	auditorium_id INT NULL,
+	start_time DATETIME NULL,
+	CONSTRAINT screenings_PK PRIMARY KEY (screening_id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+### Create booking table.
+CREATE TABLE storedata.booking (
+	booking_id INT auto_increment NOT NULL,
+	screening_id INT NULL,
+	CONSTRAINT bookings_PK PRIMARY KEY (booking_id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+

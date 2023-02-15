@@ -14,6 +14,8 @@ router.post("/book-ticket", async (req, res) => {
 });
 router.delete("/cancel-ticket", async (req, res) => {
   try {
+    const result = await bookingController.cancelBooking(req);
+    return successResponse(res, 200, "", result)
   } catch (error) {
     throw error;
   }
